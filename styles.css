@@ -61,7 +61,7 @@ body {
   width: min(1100px, 100%);
   margin-top: 16px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
@@ -81,7 +81,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.search-icon { opacity: 0.9; font-size: 18px; }
 #searchInput { flex:1; border:none; outline:none; background:transparent; color: var(--text); font-size:16px; }
 #searchInput::placeholder { color: var(--muted-2); }
 .clear-btn {
@@ -91,27 +90,12 @@ body {
 }
 .clear-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
 
-.primary-btn, .secondary-btn {
-  border:none; outline:none; cursor:pointer; padding:12px 16px; border-radius:16px;
-  font-size:15px; font-weight:800; transition:0.2s ease;
-}
-.primary-btn {
-  background: linear-gradient(135deg, var(--gold), var(--orange));
-  color:#101010; box-shadow: var(--shadow);
-}
-.primary-btn:hover { filter: brightness(1.05); transform: translateY(-2px); }
-.secondary-btn {
-  background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border);
-}
-.secondary-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
-
 /* Stats */
 .stats {
   width: min(1100px,100%);
   margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;
+  font-weight:800;
 }
-.stat { padding:10px 12px; border-radius:16px; background:var(--panel); border:1px solid var(--border); box-shadow: var(--shadow); font-weight:800; font-size:13px; color: var(--muted); }
-.stat b { color: var(--text); }
 
 /* Army Container */
 .army-container { width:min(1100px,100%); margin-top:18px; display:flex; flex-direction:column; gap:22px; align-items:center; }
@@ -131,7 +115,6 @@ body {
 .card:hover { transform: translateY(-6px); }
 
 .card-top { display:flex; flex-direction:column; align-items:center; gap:8px; }
-/* Avatar */
 .avatar {
   width: 92px;
   height: 92px;
@@ -140,7 +123,6 @@ body {
   border: 3px solid rgba(255, 255, 255, 0.18);
   background-color: #ffffff; /* خلفية بيضاء */
 }
-
 .name { font-weight:900; font-size:18px; text-align:center; }
 .rank-box { padding:6px 10px; border-radius:14px; font-size:13px; font-weight:900; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); }
 .role { margin-top:10px; font-size:14px; color:var(--muted); text-align:center; line-height:1.4; }
@@ -149,22 +131,6 @@ body {
 
 .code { position:absolute; top:14px; right:14px; padding:6px 10px; border-radius:14px; border:1px solid rgba(255,255,255,0.18); background: rgba(0,0,0,0.18); font-weight:900; font-size:14px; }
 
-.card-actions { position:absolute; bottom:14px; left:14px; right:14px; display:flex; gap:10px; }
-.small-btn { flex:1; padding:10px 10px; border-radius:16px; border:1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.07); color: var(--text); cursor:pointer; font-weight:900; transition:0.2s ease; }
-.small-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.12); }
-.small-btn.danger { border:1px solid rgba(255,77,77,0.25); background: rgba(255,77,77,0.08); }
-.small-btn.danger:hover { background: rgba(255,77,77,0.14); }
-
-/* Rank Colors */
-.rank-قائد { border-top:4px solid var(--gold); }
-.rank-نائب_القائد { border-top:4px solid var(--orange); }
-.rank-ضابط { border-top:4px solid var(--blue); }
-.rank-ضابط_صف { border-top: 4px solid #00ff99; }
-.rank-عريف { border-top:4px solid var(--green); }
-.rank-جندي_أول { border-top:4px solid var(--pink); }
-.rank-جندي { border-top:4px solid var(--purple); }
-.rank-مستجد { border-top:4px solid var(--red); }
-
 /* Empty */
 .empty-state { width:min(1100px,100%); margin:20px auto 0; padding:26px; border-radius:var(--radius); background: var(--panel); border:1px solid var(--border); box-shadow: var(--shadow); text-align:center; }
 .empty-emoji { font-size:44px; margin-bottom:8px; }
@@ -172,36 +138,7 @@ body {
 .empty-sub { color:var(--muted); margin-top:6px; }
 .hidden { display:none !important; }
 
-/* Modal */
-.modal-overlay {
-  position: fixed; inset:0; background: rgba(0,0,0,0.55);
-  display:grid; place-items:center; padding:18px; z-index:999;
-}
-.modal { width:min(720px,100%); border-radius:22px; background: rgba(18,22,40,0.92);
-border:1px solid rgba(255,255,255,0.12); box-shadow:0 25px 60px rgba(0,0,0,0.55);
-backdrop-filter: blur(12px); padding:16px; }
-.modal-header { display:flex; align-items:center; justify-content:space-between; gap:10px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.08); }
-.modal-header h2 { margin:0; font-size:18px; font-weight:900; }
-.icon-btn { width:40px; height:40px; border-radius:14px; border:1px solid rgba(255,255,255,0.12);
-background: rgba(255,255,255,0.06); color: var(--text); cursor:pointer; transition:0.2s ease; }
-.icon-btn:hover { background: rgba(255,255,255,0.10); transform: translateY(-2px); }
-.form { margin-top:14px; }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.field label { display:block; font-size:13px; color: var(--muted); margin-bottom:6px; font-weight:800; }
-.field input, .field select { width:100%; padding:12px 12px; border-radius:16px; border:1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); outline:none; color: var(--text); font-size:15px; }
-.field input:focus, .field select:focus { border:1px solid rgba(255,215,0,0.55); background: rgba(255,255,255,0.08); }
-.field.full { grid-column: 1 / -1; }
-.field.checkbox { display:flex; align-items:center; gap:10px; }
-.field.checkbox label { margin:0; cursor:pointer; }
-.field.checkbox input { width:18px; height:18px; }
-.modal-actions { margin-top:14px; display:flex; justify-content:flex-start; gap:10px; }
-
 @media (max-width:640px){
-  .grid { grid-template-columns:1fr; }
   .card { width:100%; height:auto; min-height:320px; }
   .rank-section { flex-direction:row; justify-content:center; }
 }
-
-/* Delete Modal */
-#deleteModal .modal { max-width:420px; text-align:center; }
-#deleteModal .modal p { margin:14px 0; color: var(--muted-2); font-size:15px; }
