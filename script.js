@@ -12,8 +12,224 @@ const emptyState = document.getElementById("emptyState");
 const STORAGE_KEY = "army_members_v1";
 
 // بيانات افتراضية
-const defaultData = [ /* البيانات كاملة كما عندك في الملف السابق */ ];
-
+const defaultData = [
+  {
+    name: "كافح المكافح",
+    rank: "قائد",
+    role: "قائد الجيش",
+    code: "DR7",
+    certificate: true,
+    image: "https://i.postimg.cc/kMW9xdS9/Gx-Got-Sq-W4AAAlw-F.jpg"
+  },
+  {
+    name: "عقاب المخلوط",
+    code: "P2",
+    rank: "نائب_القائد",
+    role: "نائب القائد",
+    image: "https://i.postimg.cc/6pc1KMv2/Gs3ot9PWQAAGr8r.jpg",
+    certificate: true
+  },
+  {
+    name: "سايكو دام",
+    code: "P3",
+    rank: "نائب_القائد",
+    role: "نائب القائد",
+    image: "https://i.postimg.cc/5tppcyDw/Gr3o-Ni8WUAA59Fh.jpg",
+    certificate: true
+  },
+  {
+    name: "يعقوب صلاح",
+    code: "P4",
+    rank: "ضابط",
+    role: "مسؤول نقل المخالفات",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "متعب الزبيدي",
+    code: "P5",
+    rank: "ضابط",
+    role: "مسؤول ادراج الشكاوي والمخالفات",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "صقر التميمي",
+    code: "P6",
+    rank: "ضابط",
+    role: "مسؤول ادراج الشكاوي والمخالفات",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "حربي الزير",
+    code: "P7",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "ناصر المطيري",
+    code: "P8",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "عبد الله أدم",
+    code: "P301",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "فهد سعود",
+    code: "P330",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "عبد الله خطاف",
+    code: "P331",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "مالك شلاش",
+    code: "P332",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "هباد بونشر",
+    code: "P333",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "شجاع التركي",
+    code: "P334",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "حمد التميمي",
+    code: "P335",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "محمد السومة",
+    code: "P336",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "عمر يوسف",
+    code: "P337",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "خالد محمد",
+    code: "P338",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "كاي ولفرد",
+    code: "P339",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "فيصل الثقفي",
+    code: "P340",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "ميد ريكاردو",
+    code: "P341",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "بدر سعود",
+    code: "P342",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "محمد رضا",
+    code: "P343",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "أسامة الشهراني",
+    code: "P344",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "شجاع أحمد",
+    code: "P345",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "خميس عبد الله",
+    code: "P346",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  },
+  {
+    name: "عبد الله الجرادي",
+    code: "P348",
+    rank: "ضابط_صف",
+    role: "ضبط الأفراد",
+    image: "",
+    certificate: true
+  }
+];
 // تحميل البيانات
 let armyData = loadData();
 function loadData(){ const raw = localStorage.getItem(STORAGE_KEY); if(!raw) return [...defaultData]; try{ const parsed = JSON.parse(raw); if(!Array.isArray(parsed)) return [...defaultData]; return parsed;}catch{return [...defaultData];} }
