@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قائمة أفراد الجيش</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <img class="logo" src="https://i.postimg.cc/brY4k4b5/0ba743e8-f2e0-4f7b-9b76-2c30bfb8fdf1.png" alt="logo">
+    <div class="header-center">
+      <h1 class="title">قائمة أفراد الجيش</h1>
+      <div class="subtitle"></div>
+    </div>
+    <img class="logo" src="https://i.postimg.cc/brY4k4b5/0ba743e8-f2e0-4f7b-9b76-2c30bfb8fdf1.png" alt="logo">
+  </div>
+
+  <div class="modal-overlay hidden" id="deleteModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>تأكيد الحذف</h2>
+      <button class="icon-btn" id="closeDeleteModal">✕</button>
+    </div>
+    <p>هل أنت متأكد من حذف هذا العسكري؟</p>
+    <div class="modal-actions">
+      <button class="primary-btn" id="confirmDelete">نعم، احذف</button>
+      <button class="secondary-btn" id="cancelDelete">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon"></span>
+      <input type="text" id="searchInput" placeholder="ابحث بالاسم أو الكود أو المسؤولية...">
+      <button id="clearSearch" class="clear-btn">✕</button>
+    </div>
+    <button id="addBtn" class="primary-btn">➕ إضافة عسكري جديد</button>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="army-container" id="armyContainer"></div>
+
+  <div class="empty-state hidden" id="emptyState">
+    <div class="empty-emoji">🪖</div>
+    <div class="empty-title">لا يوجد أفراد</div>
+    <div class="empty-sub">يمكنك إضافة أفراد من زر "إضافة عسكري جديد"</div>
+  </div>
+
+  <div class="modal-actions">
+  <button type="submit" class="primary-btn"> حفظ</button>
+  <button type="button" class="secondary-btn" id="cancelBtn">إلغاء</button>
+</div>
+
+
+  <!-- Modal الإضافة/التعديل -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">إضافة عسكري جديد</h2>
+        <button class="icon-btn" id="closeModal">✕</button>
+      </div>
+      <form id="memberForm" class="form">
+        <div class="grid">
+          <div class="field">
+            <label for="f_name">الاسم</label>
+            <input type="text" id="f_name" required>
+          </div>
+          <div class="field">
+            <label for="f_code">الكود</label>
+            <input type="text" id="f_code" required>
+          </div>
+          <div class="field">
+            <label for="f_rank">الرتبة</label>
+            <select id="f_rank" required>
+              <option value="قائد">قائد</option>
+              <option value="نائب_القائد">نائب القائد</option>
+              <option value="ضابط">ضابط</option>
+              <option value="ضابط_صف">ضابط صف</option>
+              <option value="عريف">عريف</option>
+              <option value="جندي_أول">جندي أول</option>
+              <option value="جندي">جندي</option>
+              <option value="مستجد">مستجد</option>
+              
+
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f_role">المسؤولية</label>
+            <input type="text" id="f_role" required>
+          </div>
+          <div class="field full">
+            <label for="f_image">رابط الصورة</label>
+            <input type="text" id="f_image" placeholder="اتركه فارغ للصورة الافتراضية">
+          </div>
+          <div class="field checkbox full">
+            <input type="checkbox" id="f_certificate">
+            <label for="f_certificate">شهادة طيران</label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="primary-btn">حفظ</button>
+          <button type="button" class="secondary-btn" id="cancelBtn">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <P>
+
+  </P>
+<button class="primary-btn" id="saveDownloadBtn"> حفظ وتنزيل النسخة</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
